@@ -1,0 +1,527 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  
+    <title>UDA-Note02-Python控制流 | Wujian1360</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Jason">
+    
+
+    
+    <meta name="description" content="控制流if 语句 语句是是一种条件语句，根据条件为 true 还是 false 运行或执行相关代码。for 循环 for 循环 是一种“有限迭代”，意味着循环主体将运行预定义的次数。 while 循环。无限迭代循环是指循环重复未知次数，并在满足某个条件时结束  12345678910111213# 写一个 while 循环，用于计算比整数 limit 小的最大平方数，并将其存储在变量 neares">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UDA-Note02-Python控制流">
+<meta property="og:url" content="http://yoursite.com/2018/11/27/UDA-Note02-控制流/index.html">
+<meta property="og:site_name" content="Wujian1360">
+<meta property="og:description" content="控制流if 语句 语句是是一种条件语句，根据条件为 true 还是 false 运行或执行相关代码。for 循环 for 循环 是一种“有限迭代”，意味着循环主体将运行预定义的次数。 while 循环。无限迭代循环是指循环重复未知次数，并在满足某个条件时结束  12345678910111213# 写一个 while 循环，用于计算比整数 limit 小的最大平方数，并将其存储在变量 neares">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2018-11-28T01:26:36.108Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="UDA-Note02-Python控制流">
+<meta name="twitter:description" content="控制流if 语句 语句是是一种条件语句，根据条件为 true 还是 false 运行或执行相关代码。for 循环 for 循环 是一种“有限迭代”，意味着循环主体将运行预定义的次数。 while 循环。无限迭代循环是指循环重复未知次数，并在满足某个条件时结束  12345678910111213# 写一个 while 循环，用于计算比整数 limit 小的最大平方数，并将其存储在变量 neares">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Wujian1360" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Wujian1360" title="Wujian1360"></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Wujian1360">Wujian1360</a></h1>
+				<h2 class="blog-motto">sometimes code， sometimes design</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search">
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</ul></nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope="" itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2018/11/27/UDA-Note02-控制流/" title="UDA-Note02-Python控制流" itemprop="url">UDA-Note02-Python控制流</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Jason" target="_blank" itemprop="author">Jason</a>
+		
+  </p><p class="article-time">
+    <time datetime="2018-11-27T06:31:29.000Z" itemprop="datePublished"> Published 2018-11-27</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#控制流"><span class="toc-number">1.</span> <span class="toc-text">控制流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#if-语句"><span class="toc-number">1.0.1.</span> <span class="toc-text">if 语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for-循环"><span class="toc-number">1.0.2.</span> <span class="toc-text">for 循环</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列表推导式"><span class="toc-number">1.1.</span> <span class="toc-text">列表推导式</span></a></li></ol>
+		
+		</div>
+		
+		<h1 id="控制流"><a href="#控制流" class="headerlink" title="控制流"></a>控制流</h1><h3 id="if-语句"><a href="#if-语句" class="headerlink" title="if 语句"></a>if 语句</h3><ul>
+<li>语句是是一种条件语句，根据条件为 true 还是 false 运行或执行相关代码。<h3 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h3></li>
+<li>for 循环 是一种“有限迭代”，意味着循环主体将运行预定义的次数。</li>
+<li>while 循环。无限迭代循环是指循环重复未知次数，并在满足某个条件时结束</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 写一个 while 循环，用于计算比整数 limit 小的最大平方数，并将其存储在变量 nearest_square 中。</span></span><br><span class="line"><span class="comment"># 平方数是整数乘以自己后的积，例如 36 是一个平方数，因为它等于 6*6。</span></span><br><span class="line"><span class="comment"># 例如，如果 limit 是 40，你的代码应该将 nearest_square 设为 36。</span></span><br><span class="line">limit = <span class="number">40</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># write your while loop here</span></span><br><span class="line">nearest_square = <span class="number">0</span> </span><br><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> ((i + <span class="number">1</span>) ** <span class="number">2</span>) &lt; limit:</span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line">    nearest_square = i ** <span class="number">2</span></span><br><span class="line"></span><br><span class="line">print(nearest_square)</span><br></pre></td></tr></table></figure>
+<pre><code>36
+</code></pre><ul>
+<li>Break-使循环终止</li>
+<li>Continue-跳过循环的一次迭代</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 截断字符串</span></span><br><span class="line"><span class="comment"># 用 break 语句写一个循环，用于创建刚好长 140 个字符的字符串 news_ticker。</span></span><br><span class="line"><span class="comment"># 你应该通过添加 headlines 列表中的新闻标题创建新闻提醒，在每个新闻标题之间插入空格。</span></span><br><span class="line"><span class="comment"># 如果有必要的话，将最后一个新闻标题从中间截断，使 news_ticker 刚好长 140 个字符。</span></span><br><span class="line"><span class="comment"># HINT: modify the headlines list to verify your loop works with different inputs</span></span><br><span class="line">headlines = [<span class="string">"Local Bear Eaten by Man"</span>,</span><br><span class="line">             <span class="string">"Legislature Announces New Laws"</span>,</span><br><span class="line">             <span class="string">"Peasant Discovers Violence Inherent in System"</span>,</span><br><span class="line">             <span class="string">"Cat Rescues Fireman Stuck in Tree"</span>,</span><br><span class="line">             <span class="string">"Brave Knight Runs Away"</span>,</span><br><span class="line">             <span class="string">"Papperbok Review: Totally Triffic"</span>]</span><br><span class="line"></span><br><span class="line">news_ticker = <span class="string">""</span></span><br><span class="line"><span class="comment"># write your loop here</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> headlines:</span><br><span class="line">    news_ticker += i + <span class="string">' '</span></span><br><span class="line">    <span class="keyword">if</span> len(news_ticker) &gt;= <span class="number">140</span>:</span><br><span class="line">        news_ticker = news_ticker[:<span class="number">140</span>]</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">print(news_ticker)</span><br></pre></td></tr></table></figure>
+<pre><code>Local Bear Eaten by Man Legislature Announces New Laws Peasant Discovers Violence Inherent in System Cat Rescues Fireman Stuck in Tree Brave
+</code></pre><ul>
+<li>Zip-返回一个将多个可迭代对象组合成一个元组序列的迭代器。正如 range() 一样，我们需要将其转换为列表或使用循环进行遍历以查看其中的元素。</li>
+<li>enumerate-是一个会返回元组迭代器的内置函数，这些元组包含列表的索引和值。当你需要在循环中获取可迭代对象的每个元素及其索引时，将经常用到该函数。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 组合坐标</span></span><br><span class="line">x_coord = [<span class="number">23</span>, <span class="number">53</span>, <span class="number">2</span>, <span class="number">-12</span>, <span class="number">95</span>, <span class="number">103</span>, <span class="number">14</span>, <span class="number">-5</span>]</span><br><span class="line">y_coord = [<span class="number">677</span>, <span class="number">233</span>, <span class="number">405</span>, <span class="number">433</span>, <span class="number">905</span>, <span class="number">376</span>, <span class="number">432</span>, <span class="number">445</span>]</span><br><span class="line">z_coord = [<span class="number">4</span>, <span class="number">16</span>, <span class="number">-6</span>, <span class="number">-42</span>, <span class="number">3</span>, <span class="number">-6</span>, <span class="number">23</span>, <span class="number">-1</span>]</span><br><span class="line">labels = [<span class="string">"F"</span>, <span class="string">"J"</span>, <span class="string">"A"</span>, <span class="string">"Q"</span>, <span class="string">"Y"</span>, <span class="string">"B"</span>, <span class="string">"W"</span>, <span class="string">"X"</span>]</span><br><span class="line"></span><br><span class="line">points = []</span><br><span class="line"><span class="comment"># write your for loop here</span></span><br><span class="line">points_temp = zip(labels, x_coord, y_coord, z_coord)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> p <span class="keyword">in</span> points_temp:</span><br><span class="line">    temp_str = str(<span class="string">'&#123;&#125;: &#123;&#125;, &#123;&#125;, &#123;&#125;'</span>.format(p[<span class="number">0</span>], p[<span class="number">1</span>], p[<span class="number">2</span>], p[<span class="number">3</span>]))</span><br><span class="line">    points.append(temp_str)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> point <span class="keyword">in</span> points:</span><br><span class="line">    print(point)</span><br></pre></td></tr></table></figure>
+<pre><code>F: 23, 677, 4
+J: 53, 233, 16
+A: 2, 405, -6
+Q: -12, 433, -42
+Y: 95, 905, 3
+B: 103, 376, -6
+W: 14, 432, 23
+X: -5, 445, -1
+{&apos;Barney&apos;: 72, &apos;Robin&apos;: 68, &apos;Ted&apos;: 72, &apos;Lily&apos;: 66, &apos;Marshall&apos;: 76}
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将列表组合成字典</span></span><br><span class="line">cast_names = [<span class="string">"Barney"</span>, <span class="string">"Robin"</span>, <span class="string">"Ted"</span>, <span class="string">"Lily"</span>, <span class="string">"Marshall"</span>]</span><br><span class="line">cast_heights = [<span class="number">72</span>, <span class="number">68</span>, <span class="number">72</span>, <span class="number">66</span>, <span class="number">76</span>]</span><br><span class="line">cast =  dict(zip(cast_names,cast_heights))</span><br><span class="line">print(cast)</span><br></pre></td></tr></table></figure>
+<pre><code>{&apos;Barney&apos;: 72, &apos;Robin&apos;: 68, &apos;Ted&apos;: 72, &apos;Lily&apos;: 66, &apos;Marshall&apos;: 76}
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 拆封元组</span></span><br><span class="line">cast = ((<span class="string">"Barney"</span>, <span class="number">72</span>), (<span class="string">"Robin"</span>, <span class="number">68</span>), (<span class="string">"Ted"</span>, <span class="number">72</span>), (<span class="string">"Lily"</span>, <span class="number">66</span>), (<span class="string">"Marshall"</span>, <span class="number">76</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># define names and heights here</span></span><br><span class="line">names,heights = zip(*cast)</span><br><span class="line"></span><br><span class="line">print(names)</span><br><span class="line">print(heights)</span><br></pre></td></tr></table></figure>
+<pre><code>(&apos;Barney&apos;, &apos;Robin&apos;, &apos;Ted&apos;, &apos;Lily&apos;, &apos;Marshall&apos;)
+(72, 68, 72, 66, 76)
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 拆分元组</span></span><br><span class="line">data = ((<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>), (<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>), (<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>), (<span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>))</span><br><span class="line"></span><br><span class="line">data_transpose = tuple(zip(*data))</span><br><span class="line">print(data_transpose)</span><br></pre></td></tr></table></figure>
+<pre><code>((0, 3, 6, 9), (1, 4, 7, 10), (2, 5, 8, 11))
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Enumerate</span></span><br><span class="line">cast = [<span class="string">"Barney Stinson"</span>, <span class="string">"Robin Scherbatsky"</span>, <span class="string">"Ted Mosby"</span>, <span class="string">"Lily Aldrin"</span>, <span class="string">"Marshall Eriksen"</span>]</span><br><span class="line">heights = [<span class="number">72</span>, <span class="number">68</span>, <span class="number">72</span>, <span class="number">66</span>, <span class="number">76</span>]</span><br><span class="line"><span class="comment"># write your for loop here</span></span><br><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> enumerate(cast):</span><br><span class="line">    cast[k] = <span class="string">'&#123;&#125; &#123;&#125;'</span>.format(v, heights[k])</span><br><span class="line">print(cast)</span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;Barney Stinson 72&apos;, &apos;Robin Scherbatsky 68&apos;, &apos;Ted Mosby 72&apos;, &apos;Lily Aldrin 66&apos;, &apos;Marshall Eriksen 76&apos;]
+</code></pre><h2 id="列表推导式"><a href="#列表推导式" class="headerlink" title="列表推导式"></a>列表推导式</h2><ul>
+<li>在 Python 中，你可以使用列表推导式快速简练地创建列表。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 提取名字</span></span><br><span class="line">names = [<span class="string">"Rick Sanchez"</span>, <span class="string">"Morty Smith"</span>, <span class="string">"Summer Smith"</span>, <span class="string">"Jerry Smith"</span>, <span class="string">"Beth Smith"</span>]</span><br><span class="line">first_names = [i.split(<span class="string">' '</span>)[<span class="number">0</span>].lower() <span class="keyword">for</span> i <span class="keyword">in</span> names]</span><br><span class="line">print(first_names)</span><br><span class="line"></span><br><span class="line"><span class="comment">#multiples_3</span></span><br><span class="line">multiples_3 = [i*<span class="number">3</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">21</span>)]</span><br><span class="line">print(multiples_3)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按得分过滤姓名</span></span><br><span class="line">scores = &#123;</span><br><span class="line">             <span class="string">"Rick Sanchez"</span>: <span class="number">70</span>,</span><br><span class="line">             <span class="string">"Morty Smith"</span>: <span class="number">35</span>,</span><br><span class="line">             <span class="string">"Summer Smith"</span>: <span class="number">82</span>,</span><br><span class="line">             <span class="string">"Jerry Smith"</span>: <span class="number">23</span>,</span><br><span class="line">             <span class="string">"Beth Smith"</span>: <span class="number">98</span></span><br><span class="line">          &#125;</span><br><span class="line">passed = list(&#123;k <span class="keyword">for</span> k, v <span class="keyword">in</span> scores.items() <span class="keyword">if</span> v &gt;= <span class="number">65</span>&#125;)</span><br><span class="line">print(passed)</span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;rick&apos;, &apos;morty&apos;, &apos;summer&apos;, &apos;jerry&apos;, &apos;beth&apos;]
+[3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60]
+[&apos;Beth Smith&apos;, &apos;Summer Smith&apos;, &apos;Rick Sanchez&apos;]
+</code></pre>  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Python/">Python</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2018/11/27/UDA-Note02-控制流/" data-title="UDA-Note02-Python控制流 | Wujian1360" data-tsina="" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev">
+ <a href="/2018/11/27/02 about Jupyter Notebook /" title="About Jupyter Notebook">
+  <strong>上一篇：</strong><br>
+  <span>
+  About Jupyter Notebook</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2018/11/27/UDA-Note03-函数/" title="UDA-Note03-函数">
+ <strong>下一篇：</strong><br> 
+ <span>UDA-Note03-函数
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#控制流"><span class="toc-number">1.</span> <span class="toc-text">控制流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#if-语句"><span class="toc-number">1.0.1.</span> <span class="toc-text">if 语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for-循环"><span class="toc-number">1.0.2.</span> <span class="toc-text">for 循环</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列表推导式"><span class="toc-number">1.1.</span> <span class="toc-text">列表推导式</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/Python/" title="Python">Python<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Anachonda/" title="Anachonda">Anachonda<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Jupyter/" title="Jupyter">Jupyter<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://github.com/wujian1360" target="_blank" title="Github">Github</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.liaoxuefeng.com/" target="_blank" title="廖雪峰官网">廖雪峰官网</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=&verifier=&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer">
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> ... <br>
+			...</p>
+	</section>
+	 
+	<div class="social-font">
+		
+		<a href="http://weibo.com/2176287895" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
+		
+		<a href="/about" target="_blank" title="Jason">Jason</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
