@@ -1,0 +1,593 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  
+    <title>Jupyter notebook | Wujian1360</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Jason">
+    
+
+    
+    <meta name="description" content="安装 Jupyter notebook 目前，安装 Jupyter 的最简单方法是使用 Anaconda。该发行版附带了 Jupyter notebook。你能够在默认环境下使用 notebook。 要在 conda 环境中安装 Jupyter notebook，请使用 conda install jupyter notebook。 也可以通过 pip 使用 pip install jupyter">
+<meta name="keywords" content="Jupyter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jupyter notebook">
+<meta property="og:url" content="http://yoursite.com/2018/11/28/JupyterNotebook /index.html">
+<meta property="og:site_name" content="Wujian1360">
+<meta property="og:description" content="安装 Jupyter notebook 目前，安装 Jupyter 的最简单方法是使用 Anaconda。该发行版附带了 Jupyter notebook。你能够在默认环境下使用 notebook。 要在 conda 环境中安装 Jupyter notebook，请使用 conda install jupyter notebook。 也可以通过 pip 使用 pip install jupyter">
+<meta property="og:locale" content="zh">
+<meta property="og:image" content="http://yoursite.com/2018/11/28/JupyterNotebook%20/path/to/img.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/11/28/JupyterNotebook%20/output_14_0.png">
+<meta property="og:updated_time" content="2018-11-28T05:56:39.209Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jupyter notebook">
+<meta name="twitter:description" content="安装 Jupyter notebook 目前，安装 Jupyter 的最简单方法是使用 Anaconda。该发行版附带了 Jupyter notebook。你能够在默认环境下使用 notebook。 要在 conda 环境中安装 Jupyter notebook，请使用 conda install jupyter notebook。 也可以通过 pip 使用 pip install jupyter">
+<meta name="twitter:image" content="http://yoursite.com/2018/11/28/JupyterNotebook%20/path/to/img.jpg">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Wujian1360" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Wujian1360" title="Wujian1360"></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Wujian1360">Wujian1360</a></h1>
+				<h2 class="blog-motto">sometimes code， sometimes design</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search">
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</ul></nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope="" itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2018/11/28/JupyterNotebook /" title="Jupyter notebook" itemprop="url">Jupyter notebook</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Jason" target="_blank" itemprop="author">Jason</a>
+		
+  </p><p class="article-time">
+    <time datetime="2018-11-28T05:56:12.000Z" itemprop="datePublished"> Published 2018-11-28</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装-Jupyter-notebook"><span class="toc-number">1.</span> <span class="toc-text">安装 Jupyter notebook</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#notebook-如何工作"><span class="toc-number">2.</span> <span class="toc-text">notebook 如何工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#启动-notebook-服务器"><span class="toc-number">3.</span> <span class="toc-text">启动 notebook 服务器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown-常用"><span class="toc-number">4.</span> <span class="toc-text">Markdown 常用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#A-Second-Level-Header"><span class="toc-number">4.1.</span> <span class="toc-text">A Second Level Header</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#This-is-an-H2-in-a-blockquote"><span class="toc-number">4.2.</span> <span class="toc-text">This is an H2 in a blockquote</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown-Cheatsheet-速查"><span class="toc-number">5.</span> <span class="toc-text">Markdown Cheatsheet 速查</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#LaTeX-数学表达式"><span class="toc-number">6.</span> <span class="toc-text">LaTeX 数学表达式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Magic-关键字"><span class="toc-number">7.</span> <span class="toc-text">Magic 关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码计时"><span class="toc-number">7.0.1.</span> <span class="toc-text">代码计时</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在-notebook-中嵌入可视化内容"><span class="toc-number">7.1.</span> <span class="toc-text">在 notebook 中嵌入可视化内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在-notebook-中进行调试"><span class="toc-number">7.2.</span> <span class="toc-text">在 notebook 中进行调试</span></a></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#Magic-命令"><span class="toc-number">8.</span> <span class="toc-text">Magic 命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#jupyter-notebook-操作练习"><span class="toc-number">9.</span> <span class="toc-text">jupyter notebook 操作练习</span></a></li>
+		
+		</div>
+		
+		<h1 id="安装-Jupyter-notebook"><a href="#安装-Jupyter-notebook" class="headerlink" title="安装 Jupyter notebook"></a>安装 Jupyter notebook</h1><ul>
+<li>目前，安装 Jupyter 的最简单方法是使用 Anaconda。该发行版附带了 Jupyter notebook。你能够在默认环境下使用 notebook。</li>
+<li>要在 conda 环境中安装 Jupyter notebook，请使用 conda install jupyter notebook。</li>
+<li>也可以通过 pip 使用 pip install jupyter notebook 来获得 Jupyter notebook。</li>
+</ul>
+<h1 id="notebook-如何工作"><a href="#notebook-如何工作" class="headerlink" title="notebook 如何工作"></a>notebook 如何工作</h1><ul>
+<li>Jupyter notebook 源自 Fernando Perez 发起的 IPython 项目。IPython 是一种交互式 shell，与普通的 Python shell 相似，但具有一些很好的功能（例如语法高亮显示和代码补全）。最初，notebook 的工作方式是，将来自 Web 应用（你在浏览器中看到的 notebook）的消息发送给 IPython 内核（在后台运行的 IPython 应用程序）。内核执行代码，然后将结果发送回 notebook。</li>
+<li><p>核心是 notebook 的服务器。你通过浏览器连接到该服务器，而 notebook 呈现为 Web 应用。你在 Web 应用中编写的代码通过该服务器发送给内核，内核运行代码，并将结果发送回该服务器。之后，任何输出都会返回到浏览器中。保存 notebook 时，它将作为 JSON 文件（文件扩展名为 .ipynb）写入到该服务器中。</p>
+</li>
+<li><p>此架构的一个优点是，内核无需运行 Python。由于 notebook 和内核分开，因此可以在两者之间发送任何语言的代码。例如，早期的两个非 Python 内核分别是 R 语言和 Julia 语言。使用 R 内核时，用 R 编写的代码将发送给执行该代码的 R 内核，这与在 Python 内核上运行 Python 代码完全一样。IPython notebook 已被改名，因为 notebook 变得与编程语言无关。新的名称 Jupyter 由 Julia、Python 和 R 组合而成。如果有兴趣，不妨看看可用内核的列表。</p>
+</li>
+<li><p>另一个优点是，你可以在任何地方运行 notebook 服务器，并且可通过互联网访问服务器。通常，你会在存储所有数据和 notebook 文件的自有计算机上运行服务器。但是，你也可以在远程计算机或云实例（如 Amazon 的 EC2）上设置服务器。之后，你就可以在世界上任何地方通过浏览器访问 notebook。</p>
+</li>
+</ul>
+<h1 id="启动-notebook-服务器"><a href="#启动-notebook-服务器" class="headerlink" title="启动 notebook 服务器"></a>启动 notebook 服务器</h1><ul>
+<li><p>要启动 notebook 服务器，请在终端或控制台中输入 jupyter notebook。服务器会在你运行此命令的目录中启动。这意味着任何 notebook 文件都会保存在该目录下。你通常希望在 notebook 文件所在的目录中启动服务器，不过你也可以在文件系统中导航到 notebook 文件所在的位置。</p>
+</li>
+<li><p>运行此命令时（请自己试一下！），服务器主页会在浏览器中打开。默认情况下，notebook 服务器的运行地址是 <a href="http://localhost:8888。该地址的含义是：localhost" target="_blank" rel="noopener">http://localhost:8888。该地址的含义是：localhost</a> 表示你的计算机，而 8888 是服务器的通信端口。只要 notebook 服务器仍在运行，你随时都能通过在浏览器中输入 <a href="http://localhost:8888" target="_blank" rel="noopener">http://localhost:8888</a> 返回到 web 页面中。</p>
+</li>
+<li><p>如果同时启动了另一个 notebook 服务器，新服务器会尝试使用端口 8888，但由于此端口已被占用，因此新服务器会在端口 8889 上运行。之后，你可以通过 <a href="http://localhost:8889" target="_blank" rel="noopener">http://localhost:8889</a> 连接到新服务器。每个额外的 notebook 服务器都会像这样增大端口号。</p>
+<pre><code>![avatar](https://s3.cn-north-1.amazonaws.com.cn/u-img/aaddd1f7-50b8-4588-bd33-b7f4d27d62cc.jpg)
+</code></pre></li>
+<li><p>在右侧，你可以点击“New”（新建），创建新的 notebook、文本文件、文件夹或终端。“Notebooks”下的列表显示了你已安装的内核。由于我在 Python 3 环境中运行服务器，因此列出了 Python 3 内核。你在这里看到的可能是 Python 2。我还安装了用于 Scala 2.10 和 2.11 的内核，因此它们出现在列表中。</p>
+</li>
+<li><p>如果在 conda 环境中运行 Jupyter notebook 服务器，则你还能选择环境中任何其他的内核。要创建新的 notebook，请点击你要使用的内核。</p>
+</li>
+<li><p>顶部的选项卡是 Files（文件）、Running（运行）和 Cluster（集群）。Files（文件）显示当前目录中的所有文件和文件夹。点击 Running（运行）选项卡会列出所有正在运行的 notebook。可以在该选项卡中管理这些 notebook。</p>
+</li>
+<li><p>过去，在 Clusters（集群）中创建多个用于并行计算的内核。现在，这项工作已经由 ipyparallel 接管，因此该选项卡如今用处不多。</p>
+</li>
+<li><p>如果在 conda 环境中运行 notebook 服务器，则你还能访问以下所示的“Conda”选项卡。 （需要在terminal中安装“Conda”选项卡，语句为conda install jupyter notebook nb_conda）</p>
+</li>
+<li><p>可以通过该选项卡管理 Jupyter 中的环境。你可以执行多种操作，例如创建新的环境、安装包、更新包、导出环境。</p>
+<pre><code>![avatar](https://s3.cn-north-1.amazonaws.com.cn/u-img/6813100f-a237-4c05-8bb4-5d6b9ac9427f.jpg)
+</code></pre></li>
+</ul>
+<h1 id="Markdown-常用"><a href="#Markdown-常用" class="headerlink" title="Markdown 常用"></a>Markdown 常用</h1><h2 id="A-Second-Level-Header"><a href="#A-Second-Level-Header" class="headerlink" title="A Second Level Header"></a>A Second Level Header</h2><p>Now is the time for all good men to come to the aid of their country. This is just a regular paragraph.</p>
+<p>The quick brown fox jumped over the lazydog’s back.</p>
+<blockquote>
+<p>This is a blockquote.</p>
+<p>This is the second paragraph in the blockquote.</p>
+<h2 id="This-is-an-H2-in-a-blockquote"><a href="#This-is-an-H2-in-a-blockquote" class="headerlink" title="This is an H2 in a blockquote"></a>This is an H2 in a blockquote</h2></blockquote>
+<p>Some of these words <em>are emphasized</em>.<br>Some of these words <em>are emphasized also</em>.</p>
+<p>Use two asterisks for <strong>strong emphasis</strong>.<br>Or, if you prefer, <strong>use two underscores instead</strong>.</p>
+<pre><code>1.  Red
+2.  Green
+3.  Blue
+6.  广告
+</code></pre><p>This is an <a href="http://example.com/" target="_blank" rel="noopener">example link</a>.</p>
+<p>This is an <a href="http://example.com/" title="With a Title" target="_blank" rel="noopener">example link</a>.</p>
+<p>I get 10 times more traffic from <a href="http://google.com/" title="Google" target="_blank" rel="noopener">Google</a> than from<br><a href="http://search.yahoo.com/" title="Yahoo Search" target="_blank" rel="noopener">Yahoo</a> or <a href="http://search.msn.com/" title="MSN Search" target="_blank" rel="noopener">MSN</a>.</p>
+<p>I start my morning with a cup of coffee and<br><a href="http://www.nytimes.com/" target="_blank" rel="noopener">The New York Times</a>.</p>
+<p><img src="/2018/11/28/JupyterNotebook /path/to/img.jpg" alt="alt text" title="Title"></p>
+<h1 id="Markdown-Cheatsheet-速查"><a href="#Markdown-Cheatsheet-速查" class="headerlink" title="Markdown Cheatsheet 速查"></a>Markdown Cheatsheet 速查</h1><p><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank" rel="noopener">https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet</a></p>
+<h1 id="LaTeX-数学表达式"><a href="#LaTeX-数学表达式" class="headerlink" title="LaTeX 数学表达式"></a><strong>LaTeX 数学表达式</strong></h1><p><a href="http://data-blog.udacity.com/posts/2016/10/latex-primer/" target="_blank" rel="noopener">http://data-blog.udacity.com/posts/2016/10/latex-primer/</a></p>
+<ul>
+<li><p>$y=mx+b$</p>
+</li>
+<li><p>$$P(A\mid B) = \frac{P(B\mid A)P(A)}{P(B)}$$</p>
+</li>
+<li><p>${10}C_5$</p>
+</li>
+<li><p>$e^{2x}$</p>
+</li>
+<li><p>$e^2x$</p>
+</li>
+<li><p>$\sqrt{2\pi}$</p>
+</li>
+<li><p>$\alpha, \beta, \gamma，\Phi, \Lambda, \Gamma， \times,\pm, \cup, \oplus，\sin, \cosh, \arctan$</p>
+</li>
+</ul>
+<h1 id="Magic-关键字"><a href="#Magic-关键字" class="headerlink" title="Magic 关键字"></a>Magic 关键字</h1><ul>
+<li><p>Magic 关键字是可以在单元格中运行的特殊命令，能让你控制 notebook 本身或执行系统调用（例如更改目录）。例如，在 notebook 中可以使用 %matplotlib 将 matplotlib 设置为以交互方式工作。</p>
+</li>
+<li><p>Magic 命令的前面带有一个或两个百分号（% 或 %%），分别对应行 Magic 命令和单元格 Magic 命令。行 Magic 命令仅应用于编写 Magic 命令时所在的行，而单元格 Magic 命令应用于整个单元格。</p>
+</li>
+<li><p>注意：这些 Magic 关键字是特定于普通 Python 内核的关键字。如果使用其他内核，这些关键字很有可能无效。</p>
+</li>
+</ul>
+<h3 id="代码计时"><a href="#代码计时" class="headerlink" title="代码计时"></a>代码计时</h3><ul>
+<li>有时候，你可能要花些精力优化代码，让代码运行得更快。</li>
+<li>在此优化过程中，必须对代码的运行速度进行计时。</li>
+<li>可以使用 Magic 命令 timeit 测算函数的运行时间，如下所示：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fibo1</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">elif</span> n==<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> fibo1(n - <span class="number">1</span>) + fibo1(n - <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fibo2</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> ((<span class="number">1</span>+sqrt(<span class="number">5</span>)) ** n - (<span class="number">1</span>-sqrt(<span class="number">5</span>))** n)/(<span class="number">2</span>**n*sqrt(<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%time fibo1(<span class="number">32</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>Wall time: 997 ms
+
+
+
+
+
+2178309
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%time fibo2(<span class="number">32</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>Wall time: 0 ns
+
+
+
+
+
+2178309.0000000023
+</code></pre><ul>
+<li>如果要测算整个单元格的运行时间，请使用 %%timeit：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">%%timeit</span><br><span class="line">f = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>):</span><br><span class="line">    f.append(i)</span><br></pre></td></tr></table></figure>
+<pre><code>414 ns ± 4.7 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+</code></pre><h2 id="在-notebook-中嵌入可视化内容"><a href="#在-notebook-中嵌入可视化内容" class="headerlink" title="在 notebook 中嵌入可视化内容"></a>在 notebook 中嵌入可视化内容</h2><ul>
+<li><p>如前所述，notebook 允许你将图像与文本和代码一起嵌入。这在你使用 matplotlib 或其他绘图包创建可视化内容时最为有用。在 notebook 中可以使用 %matplotlib 将 matplotlib 设置为以交互方式工作。默认情况下，图形呈现在各自的窗口中。但是，你可以通过命令传递参数，以选择特定的“后端”（呈现图像的软件）。要直接在 notebook 中呈现图形，应将通过命令 %matplotlib inline 内联后端一起使用。</p>
+</li>
+<li><p>提示：在分辨率较高的屏幕（例如 Retina 显示屏）上，notebook 中的默认图像可能会显得模糊。可以在 %matplotlib inline 之后使用 %config InlineBackend.figure_format = ‘retina’ 来呈现分辨率较高的图像。</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">%matplotlib inline</span><br><span class="line">%config InlineBackend.figure_format = <span class="string">'retina'</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = np.linspace(<span class="number">0</span>,<span class="number">1</span>,<span class="number">300</span>)</span><br><span class="line"><span class="keyword">for</span> w <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">6</span>,<span class="number">2</span>):</span><br><span class="line">    plt.plot(x,np.sin(np.pi*x) * np.sin(<span class="number">2</span>*w*np.pi*x))</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/11/28/JupyterNotebook /output_14_0.png" alt="png"></p>
+<h2 id="在-notebook-中进行调试"><a href="#在-notebook-中进行调试" class="headerlink" title="在 notebook 中进行调试"></a>在 notebook 中进行调试</h2><ul>
+<li>对于 Python 内核，可以使用 Magic 命令 %pdb 开启交互式调试器。出错时，你能检查当前命名空间中的变量。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%pdb</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="string">'hello'</span></span><br><span class="line">m = <span class="number">12</span></span><br><span class="line">sum(n,m)</span><br></pre></td></tr></table></figure>
+<h1 id="Magic-命令"><a href="#Magic-命令" class="headerlink" title="Magic 命令"></a>Magic 命令</h1><p><a href="https://ipython.readthedocs.io/en/stable/interactive/magics.html" target="_blank" rel="noopener">https://ipython.readthedocs.io/en/stable/interactive/magics.html</a></p>
+<h1 id="jupyter-notebook-操作练习"><a href="#jupyter-notebook-操作练习" class="headerlink" title="jupyter notebook 操作练习"></a>jupyter notebook 操作练习</h1><p><a href="https://raw.githubusercontent.com/udacity/cn-deep-learning/master/tutorials/jupyter-notebook-tutorial/working-with-code-cells.ipynb" target="_blank" rel="noopener">https://raw.githubusercontent.com/udacity/cn-deep-learning/master/tutorials/jupyter-notebook-tutorial/working-with-code-cells.ipynb</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Jupyter/">Jupyter</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2018/11/28/JupyterNotebook /" data-title="Jupyter notebook | Wujian1360" data-tsina="" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2018/11/28/Anachonda-环境与包管理/" title="Anachonda 环境与包管理">
+ <strong>下一篇：</strong><br> 
+ <span>Anachonda 环境与包管理
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装-Jupyter-notebook"><span class="toc-number">1.</span> <span class="toc-text">安装 Jupyter notebook</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#notebook-如何工作"><span class="toc-number">2.</span> <span class="toc-text">notebook 如何工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#启动-notebook-服务器"><span class="toc-number">3.</span> <span class="toc-text">启动 notebook 服务器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown-常用"><span class="toc-number">4.</span> <span class="toc-text">Markdown 常用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#A-Second-Level-Header"><span class="toc-number">4.1.</span> <span class="toc-text">A Second Level Header</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#This-is-an-H2-in-a-blockquote"><span class="toc-number">4.2.</span> <span class="toc-text">This is an H2 in a blockquote</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown-Cheatsheet-速查"><span class="toc-number">5.</span> <span class="toc-text">Markdown Cheatsheet 速查</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#LaTeX-数学表达式"><span class="toc-number">6.</span> <span class="toc-text">LaTeX 数学表达式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Magic-关键字"><span class="toc-number">7.</span> <span class="toc-text">Magic 关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码计时"><span class="toc-number">7.0.1.</span> <span class="toc-text">代码计时</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在-notebook-中嵌入可视化内容"><span class="toc-number">7.1.</span> <span class="toc-text">在 notebook 中嵌入可视化内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在-notebook-中进行调试"><span class="toc-number">7.2.</span> <span class="toc-text">在 notebook 中进行调试</span></a></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#Magic-命令"><span class="toc-number">8.</span> <span class="toc-text">Magic 命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#jupyter-notebook-操作练习"><span class="toc-number">9.</span> <span class="toc-text">jupyter notebook 操作练习</span></a></li>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/Python/" title="Python">Python<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Jupyter/" title="Jupyter">Jupyter<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Anachonda/" title="Anachonda">Anachonda<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://github.com/wujian1360" target="_blank" title="Github">Github</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.liaoxuefeng.com/" target="_blank" title="廖雪峰官网">廖雪峰官网</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=&verifier=&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer">
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> ... <br>
+			...</p>
+	</section>
+	 
+	<div class="social-font">
+		
+		<a href="http://weibo.com/2176287895" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
+		
+		<a href="/about" target="_blank" title="Jason">Jason</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
