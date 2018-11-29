@@ -4,27 +4,25 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
   
-    <title>07-JS原型-原型链 | Wujian1360</title>
+    <title>Git常用操作 | Wujian1360</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Jason">
     
 
     
-    <meta name="description" content="原型–函数出生的时候就定义了。 他定义了构造函数制造出的对象的公共祖先。 Person.prototype = ｛｝原型是祖先,也是对象   function Person(){     this.lastName = &amp;apos;ji&amp;apos;;//覆盖原型的lastName } Person.prototype.name = &amp;apos;hehe&amp;apos;; Person.prototy">
-<meta name="keywords" content="Javascript">
+    <meta name="description" content="取得项目的 Git 仓库 有两种取得 Git 项目仓库的方法。 第一种是在现存的目录下，通过导入所有文件来创建新的 Git 仓库。 第二种是从已有的 Git 仓库克隆出一个新的镜像仓库来。在工作目录中初始化新仓库   要对现有的某个项目开始用 Git 管理，只需到此项目所在的目录，执行： $ git init  初始化后，在当前目录下会出现一个名为 .git 的目录，所有 Git 需要的数据和资源">
+<meta name="keywords" content="Javascript, Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="07-JS原型-原型链">
-<meta property="og:url" content="http://yoursite.com/2018/11/28/07-JS原型-原型链/index.html">
+<meta property="og:title" content="Git常用操作">
+<meta property="og:url" content="http://yoursite.com/2018/11/29/Git常用操作/index.html">
 <meta property="og:site_name" content="Wujian1360">
-<meta property="og:description" content="原型–函数出生的时候就定义了。 他定义了构造函数制造出的对象的公共祖先。 Person.prototype = ｛｝原型是祖先,也是对象   function Person(){     this.lastName = &amp;apos;ji&amp;apos;;//覆盖原型的lastName } Person.prototype.name = &amp;apos;hehe&amp;apos;; Person.prototy">
+<meta property="og:description" content="取得项目的 Git 仓库 有两种取得 Git 项目仓库的方法。 第一种是在现存的目录下，通过导入所有文件来创建新的 Git 仓库。 第二种是从已有的 Git 仓库克隆出一个新的镜像仓库来。在工作目录中初始化新仓库   要对现有的某个项目开始用 Git 管理，只需到此项目所在的目录，执行： $ git init  初始化后，在当前目录下会出现一个名为 .git 的目录，所有 Git 需要的数据和资源">
 <meta property="og:locale" content="zh">
-<meta property="og:image" content="http://yoursite.com/2018/11/28/07-JS原型-原型链/figure1.jpg">
-<meta property="og:updated_time" content="2018-11-28T06:43:21.706Z">
+<meta property="og:updated_time" content="2018-11-29T01:52:33.414Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="07-JS原型-原型链">
-<meta name="twitter:description" content="原型–函数出生的时候就定义了。 他定义了构造函数制造出的对象的公共祖先。 Person.prototype = ｛｝原型是祖先,也是对象   function Person(){     this.lastName = &amp;apos;ji&amp;apos;;//覆盖原型的lastName } Person.prototype.name = &amp;apos;hehe&amp;apos;; Person.prototy">
-<meta name="twitter:image" content="http://yoursite.com/2018/11/28/07-JS原型-原型链/figure1.jpg">
+<meta name="twitter:title" content="Git常用操作">
+<meta name="twitter:description" content="取得项目的 Git 仓库 有两种取得 Git 项目仓库的方法。 第一种是在现存的目录下，通过导入所有文件来创建新的 Git 仓库。 第二种是从已有的 Git 仓库克隆出一个新的镜像仓库来。在工作目录中初始化新仓库   要对现有的某个项目开始用 Git 管理，只需到此项目所在的目录，执行： $ git init  初始化后，在当前目录下会出现一个名为 .git 的目录，所有 Git 需要的数据和资源">
 
     
     <link rel="alternative" href="/atom.xml" title="Wujian1360" type="application/atom+xml">
@@ -84,14 +82,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/11/28/07-JS原型-原型链/" title="07-JS原型-原型链" itemprop="url">07-JS原型-原型链</a>
+      <a href="/2018/11/29/Git常用操作/" title="Git常用操作" itemprop="url">Git常用操作</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Jason" target="_blank" itemprop="author">Jason</a>
 		
   </p><p class="article-time">
-    <time datetime="2018-11-28T06:34:28.000Z" itemprop="datePublished"> Published 2018-11-28</time>
+    <time datetime="2018-11-29T01:48:02.000Z" itemprop="datePublished"> Published 2018-11-29</time>
     
   </p>
 </header>
@@ -100,279 +98,46 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#取得项目的-Git-仓库"><span class="toc-number">1.</span> <span class="toc-text">取得项目的 Git 仓库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在工作目录中初始化新仓库"><span class="toc-number">2.</span> <span class="toc-text">在工作目录中初始化新仓库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#从现有仓库克隆"><span class="toc-number">3.</span> <span class="toc-text">从现有仓库克隆</span></a></li></ol>
 		
 		</div>
 		
-		<ul>
-<li>原型–函数出生的时候就定义了。</li>
-<li>他定义了构造函数制造出的对象的公共祖先。</li>
-<li>Person.prototype = ｛｝原型是祖先,也是对象</li>
+		<h1 id="取得项目的-Git-仓库"><a href="#取得项目的-Git-仓库" class="headerlink" title="取得项目的 Git 仓库"></a>取得项目的 Git 仓库</h1><ul>
+<li>有两种取得 Git 项目仓库的方法。<ul>
+<li>第一种是在现存的目录下，通过导入所有文件来创建新的 Git 仓库。</li>
+<li>第二种是从已有的 Git 仓库克隆出一个新的镜像仓库来。<h1 id="在工作目录中初始化新仓库"><a href="#在工作目录中初始化新仓库" class="headerlink" title="在工作目录中初始化新仓库"></a>在工作目录中初始化新仓库</h1></li>
 </ul>
-<p><img src="/2018/11/28/07-JS原型-原型链/figure1.jpg" alt="原型链"></p>
-<pre><code>function Person(){
-    this.lastName = &apos;ji&apos;;//覆盖原型的lastName
-}
-Person.prototype.name = &apos;hehe&apos;;
-Person.prototype.lastName = &apos;Deng&apos;;
-var person = new Person();
-var person1 = new Person();
-console.log(person.name,person.lastName); 
-console.log(person.name,person1.lastName);
-
-//特点
-Person.prototype.say = function(){
-    console.log(&apos;haha&apos;);
-}   
-person.say();
-
-// 原型的修改，只能用原型的prototype修改，
-// 通过对象上直接修改，本质上是为对象添加新属性，原型不受影响
-
-// Car.prototype.name = &apos;bmw&apos;;
-// Car.prototype.height = 1400;
-//原型的另一种写法
-Car.prototype = {
-    name : &apos;bmw&apos;,
-    height : 1400,
-}
-function Car(){
-}
-var car = new Car();
-car.name = &apos;jojo&apos;;
-console.log(car.name);//对象增加了一个新的name属性覆盖祖先的name属性。
-console.log(Car.prototype.name);//圆形的name属性不受影响。
-
-//constructor返回对象的构造器，
-//Car.prototype隐式生成的属性
-//对象.constructor的指向可以手动更改，指向别的构造函数
-console.log(car.constructor);
-//__proto__指向的就是原型
-console.log(car.__proto__);
-
-//访问属性，会先去找自己构造函数的，入伏偶没有就回去找__proto__：SomeOne.prototype
-SomeOne.prototype.name = &apos;abc&apos;;
-function SomeOne(){
-    // var this  = {
-    //     __proto__:SomeOne.prototype;
-    // }
-}
-var someone = new SomeOne();
-console.log(someone.name);
-//新建一个对象
-var obj = {
-    name:&apos;bcd&apos;,
-}
-//原先指向 someone.__proto__ = SomeOne.prototype 
-someone.__proto__ = obj;  //someone对象继承自obj了
-console.log(someone.name); 
-
-//下面这两种创建对象的方式等同：
-// var obj = {};
-// var obj = new Object();//一般不用
-//obj.__proto__ ---&gt; Object.prototype(原型链的终端)
-console.log(obj.constructor); 
-//访问object对象的构造器，还会返回对象自己
-
-// SomeOne.prototype = {} --&gt; Object.prototype
-// function SomeOne(){
-//     // var this  = {
-//     //     __proto__:SomeOne.prototype;
-//     // }
-// }
-
-// Object.create(原型对象)//也能创建对象
-var sun = {
-    name:&apos;sunny&apos;,
-    age:12,
-    say:function(){
-        return this.name;
-    }
-};
-var sonOfsun = Object.create(sun);
-console.log(sonOfsun.name);
-sonOfsun.name = &apos;hello&apos;;
-console.log(sonOfsun.say());
-
-//没有原型的对象
-//通过Object.create(null)可以构造出一个没有原型的对象。
-var obj = Object.create(null);
-console.log(obj);//可以得到一个没有原型的对象，这是一个例外。
-//即使人为加上的__proto__,系统不认，也就不能用来继承。
-
-// toString()方法  【重写】
-//这两种东西不是对象，所以没有toString()方法。
-// null.toString();
-// undefined.toString();
-
-// 123.toString() 不行,因为 . 首先识别成浮点类型
-var num = 123;
-//num.toString(); --&gt; new number(num).toString();//Number的tostring方法是重写的
-//Number.prototype.toString() = function(){Number重写的方法};
-console.log( typeof(num.toString()) );
-
-var obj = {};
-console.log(obj.toString());//返回 [Object Object]
-
-//每一种对象都可以重写祖先的toString()方法。
-var a = Object.prototype.toString.call(num);//调用顶端的toString()方法。
-console.log(a);//返回 [object Number]
-var a = Object.prototype.toString.call(true);
-console.log(a);//[object Boolean]
-
-//document.write();方法其实就是在调用对象的 toString()方法
-var obj = Object.create(null);
-obj.toString = function(){
-    return &apos;你好啊，找我吗？&apos;
-}
-document.write(obj);
-
-console.log(0.14 * 100); //14.000000000000002,  js中的bug，只有0.14会出现偏差
-//向上向下取整,ceil天花板，floor地板
-console.log(Math.floor(1.42));
-console.log(Math.ceil(1.42));
-//0~1之间随机数,并保留两位小数
-console.log(Math.random().toFixed(2) * 100);//会随机出现精度小偏差,道理同上。
-console.log(Math.floor(Math.random() * 100));//先*100，在取整就可以
-
-//可正常计算的范围：小数点前16位，后16位。
-
-
-// call / apply
-// 改变 this 指向
-
-// 定义一个方法，并调用它，其实是隐含的调用了call()方法
-function test(){
-    console.log(&apos;ok&apos;);
-}
-test();  
-test.call();//等同
-
-//call在对象中的应用：
-//call的根本作用就是改变this指向
-
-//建立构造函数Per
-function Per(name,age){ 
-    this.name = name;
-    this.age = age;
-}
-//new一个对象per
-var per = new Per(&apos;deng&apos;,18);
-
-//生成一个对象obj
-var obj = {
-    width : 100,
-    height : 200,
-};
-//调用call()
-Per.call(obj,&apos;anna&apos;,19);
-//它会让Per里面预设的this全变成obj
-//最终对象obj拥有两个对象的所有属性
-//有点像用Per把对象obj扩展了
-// new Per(...)  ==&gt;  Per.call() 就是新建一个per对象
-// Per.call(obj, ...);给obj对象添加Per的所有属性
-var per2 = new Per(&apos;qq&apos;,66);
-//原来的Per照常使用。
-
-
-//新的例子：
-//一个构造函数Worker
-function Worker(){
-    this.toWork = function(){
-        console.log(&apos;working...&apos;);
-    }
-}
-//创建对象
-var worker = new Worker();
-//用Per扩展worker的属性和方法
-Per.call(worker,&quot;wang&quot;,41);
-worker.toWork();
-//一个构造函数Bird
-function Bird(n){ 
-    this.n = n;
-    this.tofly = function(){
-        console.log(this.n + &apos;I can fly...&apos;);
-    }
-}
-//用Bird再次扩展worker的属性和方法
-Bird.call(worker,2);
-worker.tofly(2);
-worker.name = &apos;li&apos;;
-//最后的worker对象除了拥有自己的功能和属性外，
-//还拥有Per和Bird的所有功能和属性。
-//而原来的Per和Bird构造方法都不变。
-var per = new Per(&apos;zhang&apos;,99);
-var bir = new Bird(3);
-console.log(per);
-console.log(worker);
-console.log(bir);
-bir.tofly();
-
-
-
-//所以最终的继承和扩展写法为：
-function Person(name,age,sex){
-    this.name = name;
-    this.age = age;
-    this.sex = sex;
-    this.toRun = function(){
-        console.log(&apos;running...&apos;);
-    }
-}
-function Student(name,age,sex,tel,grade){
-    // 当new一个对象，时 ===&gt;  var this = {...}
-    Person.call(this, name, age, sex);
-    //调用Person的call方法，将Person的this指向当前的this，也就实现了Person的功能。
-    this.tel = tel;
-    this.grade = grade;
-}
-var stu = new Student(&apos;joo&apos;,18,&apos;male&apos;,13988888000,2017);
-stu.toRun();
-
-
-//标准的分组构造函数
-function Component1(arg1,arg2){
-    this.arg1 = arg1;
-    this.arg2 = arg2;
-}
-function Component2(arg3,arg4){
-    this.arg3 = arg3;
-    this.arg4 = arg4;
-}
-function Component3(arg5,arg6){
-    this.arg5 = arg5;
-    this.arg6 = arg6;
-}
-function Complate(arg1,arg2,arg3,arg4,arg5,arg6){
-    Component1.call(this,arg1,arg2);
-    Component2.call(this,arg3,arg4);
-    Component3.call(this,arg5,arg6);
-}
-var car = new Complate(10,20,30,40,50,60);
-console.log(car);
-
-// apply 传参列表不同，也是改变this指向的。
-// Component1.apply(this, [arg1, arg2]);
-
-//思考题：能否打印出 1,2,3,4,5 ？
-function foo(){
-    bar.apply(null,arguments);
-}
-function bar(){
-    console.log(arguments);
-}
-foo(1,2,3,4,5);
-//可以，为什么？
-</code></pre>  
+</li>
+<li><p>要对现有的某个项目开始用 Git 管理，只需到此项目所在的目录，执行：</p>
+<pre><code>$ git init
+</code></pre></li>
+<li><p>初始化后，在当前目录下会出现一个名为 .git 的目录，所有 Git 需要的数据和资源都存放在这个目录中。</p>
+</li>
+<li><p>如果当前目录下有几个文件想要纳入版本控制，需要先用 git add 命令告诉 Git 开始对这些文件进行跟踪，然后提交：</p>
+<pre><code>$ git add *.c
+$ git add README
+$ git commit -m &apos;initial project version&apos;
+</code></pre></li>
+</ul>
+<h1 id="从现有仓库克隆"><a href="#从现有仓库克隆" class="headerlink" title="从现有仓库克隆"></a>从现有仓库克隆</h1><ul>
+<li><p>克隆仓库的命令格式为 git clone [url]。比如，要克隆 Ruby 语言的 Git 代码仓库 Grit，可以用下面的命令：</p>
+<pre><code>$ git clone git://github.com/schacon/grit.git
+</code></pre></li>
+<li><p>这会在当前目录下创建一个名为grit的目录，其中包含一个 .git 的目录，用于保存下载下来的所有版本记录，然后从中取出最新版本的文件拷贝。如果进入这个新建的 grit 目录，你会看到项目中的所有文件已经在里边了，准备好后续的开发和使用。如果希望在克隆的时候，自己定义要新建的项目目录名称，可以在上面的命令末尾指定新的名字：</p>
+<pre><code>$ git clone git://github.com/schacon/grit.git mygrit
+</code></pre></li>
+<li><p>唯一的差别就是，现在新建的目录成了 mygrit，其他的都和上边的一样。</p>
+</li>
+<li><p>Git 支持许多数据传输协议。之前的例子使用的是 git:// 协议，不过你也可以用 http(s):// 或者 user@server:/path.git 表示的 SSH 传输协议。</p>
+</li>
+<li><p>原文链接：<a href="https://git-scm.com/book/zh/v1/Git-%E5%9F%BA%E7%A1%80-%E5%8F%96%E5%BE%97%E9%A1%B9%E7%9B%AE%E7%9A%84-Git-%E4%BB%93%E5%BA%93" target="_blank" rel="noopener">https://git-scm.com/book/zh/v1/Git-%E5%9F%BA%E7%A1%80-%E5%8F%96%E5%BE%97%E9%A1%B9%E7%9B%AE%E7%9A%84-Git-%E4%BB%93%E5%BA%93</a></p>
+</li>
+</ul>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Javascript/">Javascript</a>
-  </div>
 
 </div>
 
@@ -380,7 +145,7 @@ foo(1,2,3,4,5);
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2018/11/28/07-JS原型-原型链/" data-title="07-JS原型-原型链 | Wujian1360" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2018/11/29/Git常用操作/" data-title="Git常用操作 | Wujian1360" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -393,19 +158,11 @@ foo(1,2,3,4,5);
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2018/11/29/Git常用操作/" title="Git常用操作">
-  <strong>上一篇：</strong><br>
-  <span>
-  Git常用操作</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2018/11/28/JupyterNotebook /" title="Jupyter notebook">
+<a href="/2018/11/28/07-JS原型-原型链/" title="07-JS原型-原型链">
  <strong>下一篇：</strong><br> 
- <span>Jupyter notebook
+ <span>07-JS原型-原型链
 </span>
 </a>
 </div>
@@ -422,7 +179,7 @@ foo(1,2,3,4,5);
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#取得项目的-Git-仓库"><span class="toc-number">1.</span> <span class="toc-text">取得项目的 Git 仓库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在工作目录中初始化新仓库"><span class="toc-number">2.</span> <span class="toc-text">在工作目录中初始化新仓库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#从现有仓库克隆"><span class="toc-number">3.</span> <span class="toc-text">从现有仓库克隆</span></a></li></ol>
  
   </div>
 
